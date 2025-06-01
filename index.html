@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>限定動画</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; background: #f4f4f4; }
+    #videos { display: none; margin-top: 2em; }
+    iframe { display: block; margin: 1em auto; width: 90%; max-width: 560px; height: 315px; }
+    .hidden { display: none; }
+    .center { text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <h2>パスワードが必要です</h2>
+    <p>質問：実家の喫茶店の名前は？（カタカナ）</p>
+    <input type="password" id="passwordInput" placeholder="例：イッツ">
+    <button onclick="checkPassword()">送信</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+
+  <div id="videos">
+    <h2 class="center">限定動画一覧</h2>
+    <iframe src="https://drive.google.com/file/d/1095JKet93iub5u0izIh3JEf_4tjNsZoO/preview" allow="autoplay"></iframe>
+    <iframe src="https://drive.google.com/file/d/1nXz_in_NBceg-GlR1aK_Ljp4rzZjYl7t/preview" allow="autoplay"></iframe>
+    <iframe src="https://drive.google.com/file/d/1DesaHdIZ1sNMEZ7eoDh3YfOs4CKEJk59/preview" allow="autoplay"></iframe>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('passwordInput').value.trim();
+      if (input === "ログカフェイッツ") {
+        document.querySelector('.center').classList.add('hidden');
+        document.getElementById('videos').style.display = 'block';
+      } else {
+        document.getElementById('error').textContent = "パスワードが間違っています";
+      }
+    }
+  </script>
+</body>
+</html>
