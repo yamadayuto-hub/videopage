@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>限定公開動画 - 十代</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: sans-serif;
@@ -18,8 +19,9 @@
       margin-top: 100px;
     }
     iframe {
-      width: 100vw;
-      height: 90vh;
+      width: 100%;
+      height: 56.25vw; /* 16:9 比率 */
+      max-height: 90vh;
       border: none;
       margin-bottom: 2em;
     }
@@ -53,7 +55,7 @@
 
   <div class="center" id="passwordArea">
     <h2>パスワードが必要です</h2>
-    <p>質問：実家の喫茶店の名前は？（カタカナ or 英語で）</p>
+    <p>質問：実家の喫茶店の名前は？（英語で）</p>
     <input type="password" id="passwordInput" placeholder="ここに店名を入力">
     <br>
     <button onclick="checkPassword()">送信</button>
@@ -70,24 +72,22 @@
 
     <div class="folder">
       <h3>高３文化祭</h3>
-      <iframe src="https://drive.google.com/file/d/1DesaHdIZ1sNMEZ7eoDh3YfOs4CKEJk59/preview" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
-      <iframe src="https://drive.google.com/file/d/1nXz_in_NBceg-GlR1aK_Ljp4rzZjYl7t/preview" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
-      <iframe src="https://drive.google.com/file/d/1095JKet93iub5u0izIh3JEf_4tjNsZoO/preview" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+      <iframe src="https://drive.google.com/file/d/1DesaHdIZ1sNMEZ7eoDh3YfOs4CKEJk59/preview" allow="fullscreen" allowfullscreen></iframe>
+      <iframe src="https://drive.google.com/file/d/1nXz_in_NBceg-GlR1aK_Ljp4rzZjYl7t/preview" allow="fullscreen" allowfullscreen></iframe>
+      <iframe src="https://drive.google.com/file/d/1095JKet93iub5u0izIh3JEf_4tjNsZoO/preview" allow="fullscreen" allowfullscreen></iframe>
     </div>
   </div>
 
   <script>
     function checkPassword() {
-      const input = document.getElementById('passwordInput').value.trim();
-      const lowerInput = input.toLowerCase();
+      const input = document.getElementById('passwordInput').value.trim().toLowerCase();
 
       const validPasswords = [
         "logcafeits",
-        "logcafeit's",
-        "ログカフェイッツ"
+        "logcafeit's"
       ];
 
-      if (validPasswords.includes(lowerInput) || input === "ログカフェイッツ") {
+      if (validPasswords.includes(input)) {
         document.getElementById('passwordArea').classList.add('hidden');
         document.getElementById('videos').classList.remove('hidden');
       } else {
