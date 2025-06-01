@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>限定公開動画 - 十代</title>
+<style>
+  body { font-family: sans-serif; padding: 2em; background: #f4f4f4; }
+  .hidden { display: none; }
+  .center { text-align: center; }
+  iframe {
+    width: 100vw;
+    height: 90vh;
+    border: none;
+    margin-bottom: 1em;
+  }
+  .folder {
+    margin-bottom: 3em;
+  }
+  h3 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.3em;
+  }
+</style>
+</head>
+<body>
 
+<div class="center" id="passwordArea">
+  <h2>パスワードが必要です</h2>
+  <p>質問：実家の喫茶店の名前は？（カタカナ or 英語で）</p>
+  <input type="password" id="passwordInput" placeholder="例：店の名前を入力" />
+  <button onclick="checkPassword()">送信</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<div id="videos" class="hidden">
+  <h2 class="center">限定公開動画 - 十代</h2>
+
+  <div class="folder">
+    <h3>中３文化祭</h3>
+    <p>動画はありません。</p>
+  </div>
+
+  <div class="folder">
+    <h3>高３文化祭</h3>
+    <iframe src="https://drive.google.com/file/d/1DesaHdIZ1sNMEZ7eoDh3YfOs4CKEJk59/preview" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+    <iframe src="https://drive.google.com/file/d/1nXz_in_NBceg-GlR1aK_Ljp4rzZjYl7t/preview" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+    <iframe src="https://drive.google.com/file/d/1095JKet93iub5u0izIh3JEf_4tjNsZoO/preview" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+function checkPassword() {
+  const input = document.getElementById('passwordInput').value.trim();
+  if (input === "ログカフェイッツ" || input.toLowerCase() === "logcafeits") {
+    document.getElementById('passwordArea').classList.add('hidden');
+    document.getElementById('videos').classList.remove('hidden');
+  } else {
+    document.getElementById('error').textContent = "パスワードが間違っています";
+  }
+}
+</script>
+
+</body>
+</html>
