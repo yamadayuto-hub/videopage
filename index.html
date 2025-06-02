@@ -68,7 +68,7 @@
 
   <div class="center" id="passwordArea">
     <h2>パスワードが必要です</h2>
-    <p>質問：実家の喫茶店の名前は？（英語のみ）</p>
+    <p>質問：実家の喫茶店の名前は？（英語で）</p>
     <input type="password" id="passwordInput" placeholder="ここに店名を入力">
     <br>
     <button onclick="checkPassword()">送信</button>
@@ -76,17 +76,14 @@
   </div>
 
   <div id="videos" class="hidden">
-
     <h2 class="center">限定公開動画 - 十代</h2>
 
-    <!-- 中３文化祭 -->
     <div class="folder">
       <h3>中３文化祭</h3>
       <p><strong>三代目オタザイル（オタ芸）</strong></p>
       <iframe src="https://www.youtube.com/embed/sdxxxSPLwaQ" allowfullscreen></iframe>
     </div>
 
-    <!-- 高３文化祭 -->
     <div class="folder">
       <h3>高３文化祭</h3>
 
@@ -102,11 +99,24 @@
   </div>
 
   <script>
-    function checkPassword() {
-      const input = document.getElementById('passwordInput').value.trim().toLowerCase();
-      const validPasswords = ["it's", "its", "logcafeits", "logcafeit's"];
+    function normalize(str) {
+      return str.toLowerCase().replace(/\s+/g, '').replace(/’/g, "'").trim();
+    }
 
-      if (validPasswords.includes(input)) {
+    function checkPassword() {
+      const input = document.getElementById('passwordInput').value;
+      const normalized = normalize(input);
+      const valid = [
+        "its",
+        "it's",
+        "logcafeits",
+        "logcafeit's",
+        "logcafe its",
+        "log cafe its",
+        "log cafe it's"
+      ].map(normalize);
+
+      if (valid.includes(normalized)) {
         document.getElementById('passwordArea').classList.add('hidden');
         document.getElementById('videos').classList.remove('hidden');
       } else {
