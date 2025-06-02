@@ -2,116 +2,113 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>限定公開動画</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>限定公開動画 - 十代</title>
   <style>
     body {
       font-family: sans-serif;
-      padding: 2em;
-      background: #f5f5f5;
+      padding: 1em;
+      background: #f9f9f9;
       margin: 0;
     }
-    .hidden {
-      display: none;
-    }
-    .center {
-      text-align: center;
-      margin-top: 100px;
-    }
-    .section {
+    .hidden { display: none; }
+    .center { text-align: center; margin-top: 50px; }
+    .folder {
       margin-bottom: 3em;
+      padding: 1em;
+      background: #fff;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
     }
     h2, h3 {
       color: #333;
+      margin-bottom: 0.5em;
     }
-    .video-block {
-      background: #fff;
-      padding: 1em;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-bottom: 2em;
-    }
-    .video-block img {
+    iframe {
       width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      max-width: 800px;
-      cursor: pointer;
-      display: block;
-      margin: auto;
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 12px;
+    }
+    .thumbnail {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1em;
     }
     input[type="password"] {
-      padding: 0.5em;
+      padding: 0.7em;
       font-size: 1em;
-      width: 60%;
-      max-width: 300px;
+      width: 80%;
+      max-width: 320px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
     button {
-      padding: 0.5em 1em;
+      padding: 0.6em 1.2em;
       font-size: 1em;
       margin-top: 10px;
+      border: none;
+      background-color: #333;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
     }
     #error {
       color: red;
       margin-top: 1em;
     }
+    @media (max-width: 600px) {
+      h2, h3 { font-size: 1.2em; }
+      input[type="password"] { font-size: 1em; width: 90%; }
+      button { font-size: 1em; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- パスワード入力画面 -->
   <div class="center" id="passwordArea">
     <h2>パスワードが必要です</h2>
-    <p>質問：実家の喫茶店の名前は？（英語で）</p>
+    <p>質問：実家の喫茶店の名前は？（英語のみ）</p>
     <input type="password" id="passwordInput" placeholder="ここに店名を入力">
     <br>
     <button onclick="checkPassword()">送信</button>
     <p id="error"></p>
   </div>
 
-  <!-- 動画セクション -->
   <div id="videos" class="hidden">
-    <h2>中３文化祭</h2>
 
-    <div class="video-block">
-      <h3>三代目オタザイル（オタ芸）</h3>
-      <a href="https://photos.app.goo.gl/NUbpmT6bMtefAJ6v9" target="_blank">
-        <img src="https://photos.app.goo.gl/E2oBU3GJ1T4wrYvB9" alt="三代目オタザイル（オタ芸）">
-      </a>
+    <h2 class="center">限定公開動画 - 十代</h2>
+
+    <!-- 中３文化祭 -->
+    <div class="folder">
+      <h3>中３文化祭</h3>
+      <p><strong>三代目オタザイル（オタ芸）</strong></p>
+      <img class="thumbnail" src="https://photos.fife.usercontent.google.com/pw/AP1GczPvobby9EzepgTj-kj39Ee6qKMBCHMv6wLL5L_fMhfxFE4pLUaxi4Y=w1920-h1080-s-no-gm?authuser=1" alt="サムネイル">
+      <iframe src="https://www.youtube.com/embed/sdxxxSPLwaQ" allowfullscreen></iframe>
     </div>
 
-    <h2>高３文化祭</h2>
+    <!-- 高３文化祭 -->
+    <div class="folder">
+      <h3>高３文化祭</h3>
 
-    <div class="video-block">
-      <h3>日清CM 大坂半端ないって篇 パロディ</h3>
-      <a href="https://photos.app.goo.gl/265JvHxsdiVophn6A" target="_blank">
-        <img src="https://photos.app.goo.gl/VtaCxAaL2adE2HZEA" alt="日清CM 大坂半端ないって篇 パロディ">
-      </a>
-    </div>
+      <p><strong>日清CM 大坂半端ないって篇 パロディ</strong></p>
+      <img class="thumbnail" src="https://photos.fife.usercontent.google.com/pw/AP1GczNoEBqa36IdsVhRbD-HhqH5RvwkdrAW7iUJyHe0lsepMzUAr9JSu0Q=w1280-h720-s-no-gm?authuser=1" alt="サムネイル">
+      <iframe src="https://www.youtube.com/embed/Aq0ZtjCBHm8" allowfullscreen></iframe>
 
-    <div class="video-block">
-      <h3>Mステ パロディ</h3>
-      <a href="https://photos.app.goo.gl/7mgE1sofRPtGqMUY8" target="_blank">
-        <img src="https://photos.app.goo.gl/HTcKJEtvMFK6a89t5" alt="Mステ パロディ">
-      </a>
-    </div>
+      <p><strong>Mステ パロディ</strong></p>
+      <img class="thumbnail" src="https://photos.fife.usercontent.google.com/pw/AP1GczMK2ZKK2_bu72skag3P_oA0vxmiYNir4sn9R7vYuRIKyXCMcMqd90E=w1280-h720-s-no-gm?authuser=1" alt="サムネイル">
+      <iframe src="https://www.youtube.com/embed/-stkWkDxLA4" allowfullscreen></iframe>
 
-    <div class="video-block">
-      <h3>「ビリギャル」　エンディング パロディ</h3>
-      <a href="https://photos.app.goo.gl/bHXaJWU9Rik33Du66" target="_blank">
-        <img src="https://photos.app.goo.gl/1AncLfJG4LzWU1aS8" alt="ビリギャル エンディング パロディ">
-      </a>
+      <p><strong>「ビリギャル」エンディング パロディ</strong></p>
+      <img class="thumbnail" src="https://photos.fife.usercontent.google.com/pw/AP1GczMX1V63lmCfF2qQqo3E6hxgm6qM0CB2qA3vAUkBu8QvFqgEKLwqqxo=w1280-h720-s-no-gm?authuser=1" alt="サムネイル">
+      <iframe src="https://www.youtube.com/embed/kmypJ75EwZo" allowfullscreen></iframe>
     </div>
   </div>
 
-  <!-- パスワードチェック -->
   <script>
     function checkPassword() {
       const input = document.getElementById('passwordInput').value.trim().toLowerCase();
-      const validPasswords = [
-        "it's",
-        "its",
-        "logcafeits",
-        "logcafeit's"
-      ];
+      const validPasswords = ["it's", "its", "logcafeits", "logcafeit's"];
 
       if (validPasswords.includes(input)) {
         document.getElementById('passwordArea').classList.add('hidden');
